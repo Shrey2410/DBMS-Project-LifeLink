@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients - LifeLink</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">LifeLink ❤️</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="donors.html">Donors</a></li>
+            <li><a href="patients.html" class="active">Patients</a></li>
+            <li><a href="match.html">Match Donors</a></li>
+            <li><a href="inventory.html">Inventory</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Register a Patient Request</h2>
+        <div class="form-card">
+            <form id="patientForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Blood Group Needed</label>
+                    <select name="blood_grp_needed" required>
+                        <option value="A+">A+</option><option value="A-">A-</option>
+                        <option value="B+">B+</option><option value="B-">B-</option>
+                        <option value="O+">O+</option><option value="O-">O-</option>
+                        <option value="AB+">AB+</option><option value="AB-">AB-</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Resource Needed</label>
+                    <select name="resource_needed" required>
+                        <option value="blood">Blood</option>
+                        <option value="platelets">Platelets</option>
+                        <option value="plasma">Plasma</option>
+                        <option value="bone_marrow">Bone Marrow</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>HLA Type Needed (Optional - for bone marrow)</label>
+                    <input type="text" name="hla_type_needed">
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" name="city" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="text" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label>Urgency</label>
+                    <select name="urgency" required>
+                        <option value="critical">Critical</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn primary">Register Patient Request</button>
+            </form>
+        </div>
+
+        <h2>Patient Registry</h2>
+        <table id="patientsTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Blood Needed</th>
+                    <th>Resource</th>
+                    <th>City</th>
+                    <th>Urgency</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Populated by JS -->
+            </tbody>
+        </table>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
